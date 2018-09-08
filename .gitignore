@@ -1,0 +1,3 @@
+*.pyc
+pretrained/
+!pretrained/*.toml
