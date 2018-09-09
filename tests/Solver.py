@@ -9,12 +9,12 @@ class SolverTester(unittest.TestCase):
         
     def testHOGDetect(self):
         self.testInit()
-        results = self.so.infer("tests/lena.png", {"mode":"HOG", "number_of_times_to_upsample":"1"})
+        results = self.so.infer("tests/lena.png", {"mode":"HOG", "number_of_times_to_upsample":1})
         print(results)
 
     def testCNNDetect(self):
         self.testInit()
-        results = self.so.infer("tests/lena.png", {"mode":"CNN", "number_of_times_to_upsample":"1"})
+        results = self.so.infer("tests/lena.png", {"mode":"CNN", "number_of_times_to_upsample":1})
         print(results)
 
 if __name__ == '__main__':
