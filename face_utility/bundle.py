@@ -1,5 +1,6 @@
 from pkg_resources import resource_filename
 from cvpm.bundle import Bundle
+
 class FaceUtilityBundle(Bundle):
     PRETRAINED_TOML = resource_filename(__name__, "../pretrained/pretrained.toml")
     POSE_PREDICTOR_LOCATION = resource_filename(__name__, "../pretrained/shape_predictor_68_face_landmarks.dat")

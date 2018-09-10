@@ -1,2 +1,6 @@
 [package]
 name="Face_utility"
+
+[[solvers]]
+name="Face Detection"
+class="face_utility/solver/FaceDetectionSolver"
