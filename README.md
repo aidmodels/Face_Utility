@@ -1,3 +1,3 @@
 ## Face Utility
 
-[CVPM Available](https://hub.autoai.org)
+[CVPM-Available](https://hub.autoai.org)
