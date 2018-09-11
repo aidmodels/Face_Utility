@@ -1,0 +1,15 @@
+[[models]]
+name = "dlib_face_recognition_resnet_model_v1"
+url = "https://premium.file.cvtron.xyz/data/dlib_face_recognition_resnet_model_v1.dat"
+
+[[models]]
+name = "mmod_human_face_detector"
+url = "https://premium.file.cvtron.xyz/data/mmod_human_face_detector.dat"
+
+[[models]]
+name = "shape_predictor_5_face_landmarks"
+url = "https://premium.file.cvtron.xyz/data/shape_predictor_5_face_landmarks.dat"
+
+[[models]]
+name = "shape_predictor_68_face_landmarks"
+url = "https://premium.file.cvtron.xyz/data/shape_predictor_68_face_landmarks.dat"
