@@ -6,7 +6,7 @@ from face_utility.bundle import FaceUtilityBundle as Bundle
 
 class FaceDetectionSolver(Solver):
     def __init__(self, toml_file=None):
-        super().__init__(toml_file)
+        super().__init__(Bundle.PRETRAINED_TOML)
         self.logger = logging.getLogger('face_utility')
         self.face_detector = dlib.get_frontal_face_detector()
         self.cnn_face_detector = dlib.cnn_face_detection_model_v1(Bundle.CNN_FACE_DETECTOR_LOCATION)
