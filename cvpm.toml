@@ -4,3 +4,7 @@ name="Face_utility"
 [[solvers]]
 name="Face_Detection"
 class="face_utility/solver/FaceDetectionSolver"
+
+[[solvers]]
+name="Face_Landmark"
+class="face_utility/solver/FaceLandmarkSolver"

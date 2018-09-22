@@ -30,3 +30,21 @@ class FaceDetectionSolver(Solver):
     
     def _trim_css_to_bounds(self, css, image_shape):
         return max(css[0], 0), min(css[1], image_shape[1]), min(css[2], image_shape[0]), max(css[3], 0)
+ 
+class FaceLandmarkSolver(Solver):
+    def __init__(self, toml_file=None):
+        super().__init__(Bundle.PRETRAINED_TOML)
+        self.logger = logging.getLogger('face_utility')
+        self.pose_estimator_68 = dlib.shape_predictor(Bundle.POSE_PREDICTOR_LOCATION)
+        self.pose_estimator_5 = dlib.shape_predictor(Bundle.POSE_PREDICTOR_FIVE_LOCATION)
+        self.fds = FaceDetectionSolver()
+        self.detection_config = {
+            "mode": "HOG",
+            "number_of_times_to_upsample": "1"
+        }
+        self.set_bundle(Bundle)
+        self._enable_train = Bundle.ENABLE_TRAIN
+        self.set_ready()
+    def infer(self, image_file, config):
+        image_np = load_image_file(image_file)
+        
