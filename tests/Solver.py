@@ -31,7 +31,7 @@ class LandmarkSolverTester(unittest.TestCase):
     
     def testLandmarkLarge(self):
         self.testInit()
-        results = self.so.infer("tests/lena,png", {"mode":"large"})
+        results = self.so.infer("tests/lena.png", {"mode":"large"})
         print(results)
         
 if __name__ == '__main__':
