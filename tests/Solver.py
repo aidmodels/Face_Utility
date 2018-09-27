@@ -1,7 +1,7 @@
 import unittest
 from face_utility.solver import FaceDetectionSolver
 from face_utility.solver import FaceLandmarkSolver
-
+from face_utility.solver import FaceEncodingSolver
 class DetectionSolverTester(unittest.TestCase):
 
     def testInit(self):
@@ -33,6 +33,17 @@ class LandmarkSolverTester(unittest.TestCase):
         self.testInit()
         results = self.so.infer("tests/lena.png", {"mode":"large"})
         print(results)
-        
+
+class EncodingSolverTester(unittest.TestCase):
+
+    def testInit(self):
+        self.so = FaceEncodingSolver()
+        self.assertTrue(self.so.is_ready)
+    
+    def testEncoding(self):
+        self.testInit()
+        results = self.so.infer("tests/lena.png", {"num_jitters":"1"})
+        print(results)
+
 if __name__ == '__main__':
     unittest.main()
