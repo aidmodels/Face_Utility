@@ -8,3 +8,7 @@ class="face_utility/solver/FaceDetectionSolver"
 [[solvers]]
 name="Face_Landmark"
 class="face_utility/solver/FaceLandmarkSolver"
+
+[[solvers]]
+name="Face_Encoding"
+class="face_utility/solver/FaceEncodingSolver"

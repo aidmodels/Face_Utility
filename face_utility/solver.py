@@ -93,8 +93,14 @@ class FaceEncodingSolver(Solver):
         self.set_bundle(Bundle)
         self._enable_train = Bundle.ENABLE_TRAIN
         self.set_ready()
+        
     def infer(self, image_file, config):
         image_np = load_image_file(image_file)
         face_locations = self.face_detector(image_np, int(self.detection_config["number_of_times_to_upsample"]))
         landmarks = [self.pose_estimator_5(image_np, face_location) for face_location in face_locations]
-        return [np.array(self.face_encoder.compute_face_descriptor(image_np, raw_landmark, int(config['num_jitters']))) for raw_landmark in landmarks]
+        raw_encoding = [np.array(self.face_encoder.compute_face_descriptor(image_np, raw_landmark, int(config['num_jitters']))) for raw_landmark in landmarks]
+        results = []
+        for each in raw_encoding:
+            encode_list = each.tolist()
+            results.append(encode_list)
+        return results
